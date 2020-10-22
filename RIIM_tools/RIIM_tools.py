@@ -314,7 +314,10 @@ def RIIM_generate_circs(n, circuit, basis_gates=['u1', 'u2', 'u3', 'cx']):
         optimization_level=0
     )
     ops = transpile_result.data
-    num_cnots = (circuit.count_ops()['cx'])
+    if 'cx' not in circuit.count_ops():
+        num_cnots = 0
+    else:
+        num_cnots = (circuit.count_ops()['cx'])
     combinations = RIIM_gate_combinations(n, num_cnots)
     new_circs = []
     for extra_set in combinations:
