@@ -308,7 +308,7 @@ def RIIM_gate_combinations(n, num_cnots):
 ####################################################################
 
 
-def RIIM_gate_combinations_sampled(n, num_cnots, num_max):
+def riim_gate_combinations_sampled(n, num_cnots, num_max):
   combinations = [[[1]], [[2], [1, 1]], [[3], [2, 1], [1, 1, 1]],
                   [[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]]]
   all_combinations = []
